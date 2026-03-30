@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pip-green: #39ff14;
+  --pip-green-dim: #1a7a0a;
+  --pip-green-glow: rgba(57, 255, 20, 0.3);
+  --pip-green-subtle: rgba(57, 255, 20, 0.08);
+  --pip-amber: #ffbf00;
+  --pip-amber-glow: rgba(255, 191, 0, 0.3);
+  --pip-bg: #0a0e0a;
+  --pip-bg-lighter: #121a12;
+  --pip-panel: rgba(57, 255, 20, 0.05);
+  --pip-border: rgba(57, 255, 20, 0.2);
+  --pip-text: #39ff14;
+  --pip-text-dim: rgba(57, 255, 20, 0.5);
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--pip-bg);
+  color: var(--pip-text);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+::selection {
+  background: var(--pip-green);
+  color: var(--pip-bg);
+}

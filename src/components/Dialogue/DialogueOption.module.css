@@ -1,0 +1,65 @@
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid var(--pip-border);
+  border-radius: 4px;
+  color: var(--pip-text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.option:hover {
+  background: var(--pip-green-subtle);
+  border-color: var(--pip-green);
+  box-shadow: 0 0 12px var(--pip-green-glow);
+  transform: translateX(4px);
+}
+
+.key {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pip-amber);
+  min-width: 24px;
+  text-shadow: 0 0 6px var(--pip-amber-glow);
+}
+
+.text {
+  flex: 1;
+}
+
+/* Tone variants */
+.curious .key {
+  color: #00ccff;
+}
+
+.sarcastic .key {
+  color: #ff6644;
+}
+
+.enthusiastic .key {
+  color: #ffcc00;
+}
+
+.curious:hover {
+  border-color: #00ccff;
+  box-shadow: 0 0 12px rgba(0, 204, 255, 0.3);
+}
+
+.sarcastic:hover {
+  border-color: #ff6644;
+  box-shadow: 0 0 12px rgba(255, 102, 68, 0.3);
+}
+
+.enthusiastic:hover {
+  border-color: #ffcc00;
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+}

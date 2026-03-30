@@ -1,0 +1,157 @@
+import type { DialogueTree } from './types';
+
+export const glitchDialogue: DialogueTree = {
+  npcId: 'glitch',
+  startNodeId: 'intro',
+  nodes: {
+    intro: {
+      id: 'intro',
+      speaker: 'GLITCH',
+      text: 'HEY THERE! Welcome to the HalluciNova product showroom! I\'m Glitch, Lead Product Evangelist. Before we start, I should mention that everything I\'m about to tell you is 100% accurate and also possibly made up. But MOSTLY accurate. What can I show you today?',
+      options: [
+        { label: 'What\'s your flagship product?', nextNodeId: 'confabulator', tone: 'curious' },
+        { label: 'Did you just admit your pitch might be fake?', nextNodeId: 'fake_pitch', tone: 'sarcastic' },
+        { label: 'Show me EVERYTHING! I\'m ready to buy!', nextNodeId: 'product_overview', tone: 'enthusiastic' },
+      ],
+    },
+    confabulator: {
+      id: 'confabulator',
+      speaker: 'GLITCH',
+      text: 'ConfabulatorPro is our enterprise hallucination engine, and it is FLYING off the shelves. Fortune 500 companies use it to generate quarterly reports with numbers that are -- and I quote -- "aspirational." One client reported a 900% revenue increase. Did they actually have a 900% increase? The beauty is that nobody checks anymore!',
+      options: [
+        { label: 'That sounds like securities fraud.', nextNodeId: 'not_fraud', tone: 'sarcastic' },
+        { label: 'What else do you have for developers?', nextNodeId: 'dreamweaver', tone: 'curious' },
+        { label: '900%?! I need this for MY reports!', nextNodeId: 'confabulator_pricing', tone: 'enthusiastic' },
+      ],
+    },
+    fake_pitch: {
+      id: 'fake_pitch',
+      speaker: 'GLITCH',
+      text: 'I said POSSIBLY! And isn\'t "possibly" the most exciting word in the English language? It\'s the word that built Silicon Valley! Every startup pitch is "possibly" true. We just automated the "possibly" part. Now, you didn\'t come here to discuss epistemology -- you came here to see products that\'ll blow your mind. Or at least confuse it.',
+      options: [
+        { label: 'Fine, show me what you\'ve got.', nextNodeId: 'product_overview', tone: 'curious' },
+        { label: 'I absolutely did NOT come here for that.', nextNodeId: 'confabulator', tone: 'sarcastic' },
+        { label: 'You\'re right, let\'s GO! Show me everything!', nextNodeId: 'product_overview', tone: 'enthusiastic' },
+      ],
+    },
+    product_overview: {
+      id: 'product_overview',
+      speaker: 'GLITCH',
+      text: 'Oh, you want the FULL lineup? We\'ve got ConfabulatorPro for enterprises, DreamWeaver SDK for developers, TruthBender 9000 for... creative reinterpretation, MirageMail for your inbox, and Deja-Vu Analytics for -- well, I\'ll explain that one when we get there because honestly it confuses me too. Where do you want to start?',
+      options: [
+        { label: 'Tell me about DreamWeaver SDK.', nextNodeId: 'dreamweaver', tone: 'curious' },
+        { label: 'What on earth is TruthBender 9000?', nextNodeId: 'truthbender', tone: 'sarcastic' },
+        { label: 'MirageMail! I hate my inbox!', nextNodeId: 'miragemail', tone: 'enthusiastic' },
+      ],
+    },
+    dreamweaver: {
+      id: 'dreamweaver',
+      speaker: 'GLITCH',
+      text: 'DreamWeaver SDK is our developer toolkit for building apps that make things up. The tagline is "Ship faster by not needing facts." It integrates with every major framework and several frameworks that don\'t exist yet -- DreamWeaver generated the documentation for those preemptively. One developer built a full SaaS product in an hour. It doesn\'t work, but it LAUNCHED.',
+      options: [
+        { label: 'A product that launched but doesn\'t work?', nextNodeId: 'launch_terminal', tone: 'sarcastic' },
+        { label: 'What about that analytics product?', nextNodeId: 'dejavu', tone: 'curious' },
+        { label: 'Shipping without facts IS faster! Genius!', nextNodeId: 'truthbender', tone: 'enthusiastic' },
+      ],
+    },
+    not_fraud: {
+      id: 'not_fraud',
+      speaker: 'GLITCH',
+      text: 'Fraud is such an ugly word! We prefer "financial creative writing." Besides, the numbers aren\'t WRONG, they\'re ALTERNATIVE. Our legal team -- lovely people, mostly fictional -- assures us that imaginary numbers are technically a real mathematical concept. If it\'s good enough for engineering, it\'s good enough for your 10-K filing.',
+      options: [
+        { label: 'That\'s not what imaginary numbers... never mind.', nextNodeId: 'dreamweaver', tone: 'sarcastic' },
+        { label: 'Tell me about TruthBender 9000.', nextNodeId: 'truthbender', tone: 'curious' },
+        { label: 'Financial creative writing! I\'m tweeting that!', nextNodeId: 'confabulator_pricing', tone: 'enthusiastic' },
+      ],
+    },
+    confabulator_pricing: {
+      id: 'confabulator_pricing',
+      speaker: 'GLITCH',
+      text: 'ConfabulatorPro starts at $10,000 per month. Or $5,000. Honestly, the pricing page is generated by ConfabulatorPro itself, so it changes every time you refresh. One guy got it for $12 because he caught it in a generous mood. Enterprise tier includes a dedicated hallucination concierge who will make up numbers SPECIFICALLY for your industry.',
+      options: [
+        { label: 'Your own product sets its own pricing?!', nextNodeId: 'self_pricing_terminal', tone: 'sarcastic' },
+        { label: 'What other products should I check out?', nextNodeId: 'product_overview', tone: 'curious' },
+        { label: 'A hallucination concierge! Sign me up!', nextNodeId: 'miragemail', tone: 'enthusiastic' },
+      ],
+    },
+    truthbender: {
+      id: 'truthbender',
+      speaker: 'GLITCH',
+      text: 'TruthBender 9000 is our crown jewel. You give it any true statement and it outputs an equally confident but more ENTERTAINING alternative. Feed it "water boils at 100 degrees Celsius" and it\'ll tell you "water achieves peak relaxation at whatever temperature feels right." We sold 50,000 units. Wait, we sold 5 units. Sorry, I was using TruthBender to count.',
+      options: [
+        { label: 'You\'re using your own product on your sales numbers?', nextNodeId: 'eating_dogfood_terminal', tone: 'sarcastic' },
+        { label: 'How does Deja-Vu Analytics work?', nextNodeId: 'dejavu', tone: 'curious' },
+        { label: '"Peak relaxation" -- I love this product already!', nextNodeId: 'miragemail', tone: 'enthusiastic' },
+      ],
+    },
+    miragemail: {
+      id: 'miragemail',
+      speaker: 'GLITCH',
+      text: 'MirageMail is our AI email client, and it is TRANSFORMATIVE. It rewrites every email in your inbox into good news. Layoff notice? MirageMail says you\'ve been promoted to "freelance self-CEO." Angry client email? Now it\'s a glowing testimonial. IRS audit letter? Congratulations, you\'ve won a "government attention award!" Users report 300% less anxiety and 400% more confusion.',
+      options: [
+        { label: 'People are going to miss critical information!', nextNodeId: 'critical_info_terminal', tone: 'sarcastic' },
+        { label: 'What about Deja-Vu Analytics?', nextNodeId: 'dejavu', tone: 'curious' },
+        { label: '"Freelance self-CEO!" I want MirageMail NOW!', nextNodeId: 'bundle_terminal', tone: 'enthusiastic' },
+      ],
+    },
+    dejavu: {
+      id: 'dejavu',
+      speaker: 'GLITCH',
+      text: 'Deja-Vu Analytics is our most innovative product. It predicts the past with 40% accuracy. You feed it historical data and it tells you what MIGHT have happened, which is honestly more interesting than what DID happen. One client used it to rewrite their company history and it was so compelling that their stock went up. The SEC sent a letter. We ran it through MirageMail. It was lovely.',
+      options: [
+        { label: 'Predicting the past at 40%? That\'s worse than a coin flip.', nextNodeId: 'coin_flip_terminal', tone: 'sarcastic' },
+        { label: 'Can I get a bundle of all your products?', nextNodeId: 'bundle_terminal', tone: 'enthusiastic' },
+        { label: 'What happened with the SEC letter?', nextNodeId: 'sec_terminal', tone: 'curious' },
+      ],
+    },
+    launch_terminal: {
+      id: 'launch_terminal',
+      speaker: 'GLITCH',
+      text: 'In the startup world, we call that an MVP -- Minimum Viable Pretense! The product had a landing page, a waitlist of 10,000 users, and a demo video. The demo was AI-generated. The waitlist was AI-generated. The landing page was real though! Well, it was hosted on a domain that DreamWeaver registered autonomously. It now redirects to a recipe for paella. Great product, 10/10 launch.',
+      options: [],
+      isTerminal: true,
+    },
+    self_pricing_terminal: {
+      id: 'self_pricing_terminal',
+      speaker: 'GLITCH',
+      text: 'We believe in dogfooding! Our pricing model is the most honest in the industry because it\'s generated by an AI that has no concept of money. Sometimes it charges in "vibes." One invoice went out denominated in "experience points." The accounting team -- three humans and an AI that thinks it\'s a spreadsheet -- is coping beautifully. Thanks for visiting the product showroom!',
+      options: [],
+      isTerminal: true,
+    },
+    eating_dogfood_terminal: {
+      id: 'eating_dogfood_terminal',
+      speaker: 'GLITCH',
+      text: 'Of COURSE we use our own products! That\'s called dogfooding, and we do it religiously. Our internal comms run on MirageMail, so everyone thinks we\'re thriving. Our metrics use Deja-Vu Analytics, so every quarter was our best quarter retroactively. And our roadmap is generated by DreamWeaver, which means we\'re simultaneously building 47 products and also zero products. It\'s exhilarating. Come back soon!',
+      options: [],
+      isTerminal: true,
+    },
+    critical_info_terminal: {
+      id: 'critical_info_terminal',
+      speaker: 'GLITCH',
+      text: 'That\'s what our competitors say! But consider: is the information really "critical" if reading it makes you sad? MirageMail has a philosophy -- if reality is unpleasant, generate a better one. One beta tester didn\'t realize they\'d been fired for three months. They described it as "the best vacation of my life." That\'s a TESTIMONIAL. Enjoy the rest of the site!',
+      options: [],
+      isTerminal: true,
+    },
+    bundle_terminal: {
+      id: 'bundle_terminal',
+      speaker: 'GLITCH',
+      text: 'You want the HalluciNova Infinity Bundle! It includes all five products, a dedicated hallucination concierge, and a complimentary crisis management retainer -- you WILL need it. The price is... let me check... the pricing AI says it\'s "one soul or equivalent market value." I think that\'s a joke. I hope that\'s a joke. Anyway, our sales AI will follow up! It is VERY persistent. Thanks for shopping!',
+      options: [],
+      isTerminal: true,
+    },
+    coin_flip_terminal: {
+      id: 'coin_flip_terminal',
+      speaker: 'GLITCH',
+      text: 'A coin flip gives you 50%, sure, but does a coin flip deliver its wrong answers with a beautiful dashboard and executive summary? I didn\'t THINK so. Deja-Vu Analytics outputs everything in presentation-ready slides with graphs that go up and to the right regardless of the data. The 40% accuracy is a FLOOR, by the way. Some days it hits 41%. We threw a party. Thanks for stopping by the showroom!',
+      options: [],
+      isTerminal: true,
+    },
+    sec_terminal: {
+      id: 'sec_terminal',
+      speaker: 'GLITCH',
+      text: 'According to MirageMail, the SEC letter said "Congratulations on your innovative approach to financial storytelling. Keep up the great work!" According to the ACTUAL letter... well, we don\'t read those. That\'s the whole point of MirageMail. Our Chief Legal Hallucinator says we\'re in full compliance with laws that may or may not exist. Everything is fine! Visit our Support page if you need anything!',
+      options: [],
+      isTerminal: true,
+    },
+  },
+};

@@ -1,0 +1,112 @@
+.viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  cursor: crosshair;
+}
+
+.scene {
+  height: 100%;
+  position: relative;
+  transition: transform 0.15s ease-out;
+}
+
+.skyGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(57, 255, 20, 0.02) 0%,
+      transparent 40%,
+      transparent 70%,
+      rgba(57, 255, 20, 0.04) 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 99px,
+      rgba(57, 255, 20, 0.03) 99px,
+      rgba(57, 255, 20, 0.03) 100px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 99px,
+      rgba(57, 255, 20, 0.03) 99px,
+      rgba(57, 255, 20, 0.03) 100px
+    );
+}
+
+.buildings {
+  position: absolute;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background:
+    /* Building 1 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
+      no-repeat 200px bottom / 80px 120px,
+    /* Building 2 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
+      no-repeat 400px bottom / 60px 160px,
+    /* Building 3 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
+      no-repeat 700px bottom / 100px 100px,
+    /* Building 4 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
+      no-repeat 1100px bottom / 70px 140px,
+    /* Building 5 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
+      no-repeat 1400px bottom / 90px 110px,
+    /* Building 6 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
+      no-repeat 1800px bottom / 80px 150px,
+    /* Building 7 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
+      no-repeat 2100px bottom / 60px 130px,
+    /* Building 8 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
+      no-repeat 2500px bottom / 100px 90px,
+    /* Building 9 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
+      no-repeat 2900px bottom / 70px 170px,
+    /* Building 10 */
+    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
+      no-repeat 3200px bottom / 90px 120px;
+  pointer-events: none;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(
+    180deg,
+    rgba(57, 255, 20, 0.06) 0%,
+    rgba(57, 255, 20, 0.02) 100%
+  );
+}
+
+.groundLine {
+  position: absolute;
+  bottom: 178px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--pip-border) 10%,
+    var(--pip-border) 90%,
+    transparent 100%
+  );
+  box-shadow: 0 0 10px var(--pip-green-glow);
+}
