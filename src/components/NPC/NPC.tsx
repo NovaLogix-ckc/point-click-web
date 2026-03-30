@@ -14,10 +14,11 @@ export function NPC({ npc }: NPCProps) {
   const isTalking = activeNPCId === npc.id;
 
   const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
     if (isNearby) {
+      e.stopPropagation();
       startDialogue(npc.id);
     }
+    // If not nearby, let the click bubble to Scene so the character walks toward the NPC
   };
 
   return (
