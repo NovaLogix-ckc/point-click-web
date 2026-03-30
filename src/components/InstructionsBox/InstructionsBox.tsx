@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import styles from './InstructionsBox.module.css';
 
 export function InstructionsBox() {
+  const [dismissed, setDismissed] = useState(false);
+
+  if (dismissed) return null;
+
   return (
     <div className={styles.box}>
       <div className={styles.header}>
         <span className={styles.title}>// WELCOME, TRAVELER</span>
+        <button
+          className={styles.close}
+          onClick={(e) => { e.stopPropagation(); setDismissed(true); }}
+        >
+          [X]
+        </button>
       </div>
       <div className={styles.slogan}>
         &ldquo;The world&rsquo;s first website you have to <em>walk</em> through.&rdquo;
