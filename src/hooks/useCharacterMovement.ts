@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useGameStore } from '../store/gameStore';
 
-const SPEED = 200; // pixels per second
+const SPEED = 18; // percentage units per second
 
 export function useCharacterMovement() {
   const rafId = useRef<number>(0);
@@ -32,7 +32,7 @@ export function useCharacterMovement() {
       const dy = characterTarget.y - characterPosition.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
-      if (dist < 5) {
+      if (dist < 0.5) {
         store.updateCharacterPosition(characterTarget);
         store.setCharacterTarget(null);
         store.setIsWalking(false);
@@ -53,12 +53,6 @@ export function useCharacterMovement() {
         x: characterPosition.x + (dx / dist) * step,
         y: characterPosition.y + (dy / dist) * step,
       });
-
-      // Update scene scroll
-      const viewportWidth = window.innerWidth;
-      const targetScroll = characterPosition.x - viewportWidth / 2;
-      const maxScroll = 3400 - viewportWidth; // scene width - viewport
-      store.setSceneScroll(Math.max(0, Math.min(targetScroll, maxScroll)));
 
       rafId.current = requestAnimationFrame(animate);
     };
