@@ -33,7 +33,7 @@ interface GameState {
 }
 
 export const useGameStore = create<GameState>((set) => ({
-  characterPosition: { x: 200, y: 450 },
+  characterPosition: { x: 10, y: 50 },
   characterTarget: null,
   isWalking: false,
   facingDirection: 'right',

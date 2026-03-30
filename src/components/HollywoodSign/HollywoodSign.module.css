@@ -1,6 +1,6 @@
 .container {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -9,69 +9,210 @@
   pointer-events: none;
 }
 
+/* ---- Animated background effects ---- */
+
+/* Pulsing glow orb behind the sign */
+.glowOrb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(57, 255, 20, 0.08) 0%,
+    rgba(57, 255, 20, 0.03) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.glowOrbSecond {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 180px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 69, 19, 0.04) 0%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  animation: glowPulse 6s ease-in-out infinite 2s;
+}
+
+/* Electric arcs shooting from the sign */
+.electricArcs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 60px;
+}
+
+.arc {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(57, 255, 20, 0.6),
+    transparent
+  );
+  border-radius: 1px;
+  animation: electricArc 3s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+}
+
+.arc:nth-child(1) {
+  left: 5%;
+  transform: rotate(-15deg);
+  animation-delay: 0.5s;
+}
+
+.arc:nth-child(2) {
+  right: 10%;
+  transform: rotate(20deg);
+  animation-delay: 1.8s;
+}
+
+.arc:nth-child(3) {
+  left: 40%;
+  transform: rotate(-5deg);
+  animation-delay: 3.2s;
+}
+
+/* Horizontal scan beam */
+.scanBeam {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(57, 255, 20, 0.15),
+    transparent
+  );
+  animation: scanMove 5s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(57, 255, 20, 0.1);
+}
+
+@keyframes scanMove {
+  0%, 100% { top: 10%; opacity: 0.3; }
+  50% { top: 90%; opacity: 0.8; }
+}
+
+/* ---- The sign itself ---- */
+
 .sign {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
 }
 
 .letter {
   font-family: var(--font-display);
-  font-size: 72px;
+  font-size: 60px;
   font-weight: 900;
   color: var(--pip-green);
   text-shadow:
-    0 0 20px var(--pip-green-glow),
-    0 0 40px var(--pip-green-glow),
-    0 0 80px rgba(57, 255, 20, 0.15),
+    0 0 15px var(--pip-green-glow),
+    0 0 30px var(--pip-green-glow),
+    0 0 60px rgba(57, 255, 20, 0.1),
     0 2px 0 var(--pip-green-dim);
   animation: bob 3s ease-in-out infinite;
   display: inline-block;
 }
 
-.letter:nth-child(even) {
-  color: var(--pip-amber);
-  text-shadow:
-    0 0 20px var(--pip-amber-glow),
-    0 0 40px var(--pip-amber-glow),
-    0 0 80px rgba(255, 191, 0, 0.15),
-    0 2px 0 #997200;
-}
-
 .flicker {
-  animation: bob 3s ease-in-out infinite, flicker 4s ease-in-out infinite;
+  animation: bob 3s ease-in-out infinite, heavyFlicker 5s ease-in-out infinite;
 }
 
-.tagline {
-  margin-top: 8px;
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--pip-text-dim);
-  letter-spacing: 3px;
-  text-shadow: 0 0 10px var(--pip-green-glow);
-}
-
-.hillside {
+/* Glitch duplicate of sign */
+.signGlitch {
   position: absolute;
-  bottom: -40px;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  z-index: 1;
+  animation: signGlitch 8s ease-in-out infinite;
+  opacity: 0;
+}
+
+.glitchLetter {
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 900;
+  color: rgba(139, 69, 19, 0.4);
+  text-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+}
+
+/* Tagline */
+.tagline {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--pip-text-dim);
+  letter-spacing: 3px;
+  text-shadow: 0 0 8px var(--pip-green-glow);
+  position: relative;
+  z-index: 2;
+  opacity: 0.7;
+}
+
+/* Dripping effect */
+.drips {
+  position: relative;
+  height: 30px;
+  z-index: 2;
+}
+
+.drip {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 0;
   background: linear-gradient(
     180deg,
-    transparent 0%,
-    rgba(57, 255, 20, 0.03) 100%
+    rgba(57, 255, 20, 0.3),
+    rgba(57, 255, 20, 0.05)
   );
-  border-radius: 50% 50% 0 0;
+  border-radius: 0 0 2px 2px;
+  animation: dripFall 4s ease-in infinite;
+}
+
+@keyframes dripFall {
+  0% { height: 0; opacity: 0.6; }
+  60% { height: 20px; opacity: 0.4; }
+  100% { height: 25px; opacity: 0; }
 }
 
 @media (max-width: 768px) {
-  .letter {
-    font-size: 36px;
+  .letter,
+  .glitchLetter {
+    font-size: 30px;
   }
 
   .tagline {
-    font-size: 10px;
+    font-size: 9px;
+  }
+
+  .glowOrb {
+    width: 300px;
+    height: 80px;
   }
 }
