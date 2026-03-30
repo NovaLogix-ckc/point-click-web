@@ -2,7 +2,7 @@ export interface NPCDefinition {
   id: string;
   name: string;
   title: string;
-  position: { x: number; y: number }; // percentage-based (0-100)
+  position: { x: number; y: number };
   interactionRadius: number;
   spriteConfig: {
     bodyColor: string;
@@ -21,7 +21,7 @@ export const npcs: NPCDefinition[] = [
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#39ff14',
-      accentColor: '#00ff88',
+      accentColor: '#2a5c1a',
       accessory: 'glasses',
     },
     idleAnimation: 'sway',
@@ -33,8 +33,8 @@ export const npcs: NPCDefinition[] = [
     position: { x: 50, y: 45 },
     interactionRadius: 8,
     spriteConfig: {
-      bodyColor: '#00ccff',
-      accentColor: '#ffffff',
+      bodyColor: '#1a8a5c',
+      accentColor: '#0d3d2a',
       accessory: 'labcoat',
     },
     idleAnimation: 'bounce',
@@ -46,8 +46,8 @@ export const npcs: NPCDefinition[] = [
     position: { x: 78, y: 38 },
     interactionRadius: 8,
     spriteConfig: {
-      bodyColor: '#ff6600',
-      accentColor: '#ffaa00',
+      bodyColor: '#8b6914',
+      accentColor: '#4a3a0a',
       accessory: 'headset',
     },
     idleAnimation: 'float',
@@ -59,8 +59,8 @@ export const npcs: NPCDefinition[] = [
     position: { x: 35, y: 70 },
     interactionRadius: 8,
     spriteConfig: {
-      bodyColor: '#ff4444',
-      accentColor: '#44ff44',
+      bodyColor: '#5c1a1a',
+      accentColor: '#1a3a1a',
       accessory: 'hat',
     },
     idleAnimation: 'pace',
@@ -72,8 +72,8 @@ export const npcs: NPCDefinition[] = [
     position: { x: 70, y: 72 },
     interactionRadius: 8,
     spriteConfig: {
-      bodyColor: '#aa66ff',
-      accentColor: '#ffcc00',
+      bodyColor: '#3a3a2a',
+      accentColor: '#5c5c1a',
       accessory: 'trenchcoat',
     },
     idleAnimation: 'sway',
@@ -85,8 +85,8 @@ export const npcs: NPCDefinition[] = [
     position: { x: 88, y: 55 },
     interactionRadius: 8,
     spriteConfig: {
-      bodyColor: '#ffcc00',
-      accentColor: '#ff66aa',
+      bodyColor: '#4a6a1a',
+      accentColor: '#2a3a0a',
       accessory: 'book',
     },
     idleAnimation: 'float',

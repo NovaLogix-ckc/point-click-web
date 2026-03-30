@@ -11,14 +11,19 @@
   --pip-green-dim: #1a7a0a;
   --pip-green-glow: rgba(57, 255, 20, 0.3);
   --pip-green-subtle: rgba(57, 255, 20, 0.08);
-  --pip-amber: #ffbf00;
-  --pip-amber-glow: rgba(255, 191, 0, 0.3);
-  --pip-bg: #0a0e0a;
-  --pip-bg-lighter: #121a12;
-  --pip-panel: rgba(57, 255, 20, 0.05);
-  --pip-border: rgba(57, 255, 20, 0.2);
+  --pip-amber: #cc9900;
+  --pip-amber-glow: rgba(204, 153, 0, 0.25);
+  --pip-rust: #8b4513;
+  --pip-rust-glow: rgba(139, 69, 19, 0.2);
+  --pip-blood: #661a1a;
+  --pip-grime: #1a1c14;
+  --pip-bg: #070a06;
+  --pip-bg-lighter: #0e120c;
+  --pip-panel: rgba(57, 255, 20, 0.03);
+  --pip-border: rgba(57, 255, 20, 0.15);
   --pip-text: #39ff14;
-  --pip-text-dim: rgba(57, 255, 20, 0.5);
+  --pip-text-dim: rgba(57, 255, 20, 0.4);
+  --pip-smoke: rgba(20, 25, 18, 0.6);
   --font-mono: 'Share Tech Mono', 'Courier New', monospace;
   --font-display: 'Orbitron', sans-serif;
 }

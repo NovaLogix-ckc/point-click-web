@@ -7,7 +7,7 @@
 }
 
 .npc:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.3);
 }
 
 .sprite {
@@ -22,6 +22,7 @@
   margin: 0 auto;
   border-radius: 50%;
   position: relative;
+  border: 1px solid rgba(57, 255, 20, 0.1);
 }
 
 .body {
@@ -30,6 +31,7 @@
   margin: 2px auto 0;
   border-radius: 4px;
   opacity: 0.9;
+  border: 1px solid rgba(57, 255, 20, 0.08);
 }
 
 .legs {
@@ -43,7 +45,7 @@
   width: 7px;
   height: 14px;
   border-radius: 0 0 3px 3px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 /* Accessories */
@@ -116,6 +118,75 @@
   z-index: 1;
 }
 
+/* Signpost */
+.signpost {
+  position: absolute;
+  right: -90px;
+  top: -10px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.signBoard {
+  background: rgba(10, 14, 8, 0.92);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-left: 3px solid rgba(57, 255, 20, 0.4);
+  padding: 6px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+  box-shadow:
+    0 0 8px rgba(57, 255, 20, 0.08),
+    inset 0 0 12px rgba(57, 255, 20, 0.02);
+  position: relative;
+}
+
+.signBoard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 3px
+  );
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.signName {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--pip-green);
+  text-shadow: 0 0 6px var(--pip-green-glow);
+}
+
+.signTitle {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--pip-text-dim);
+  letter-spacing: 1px;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.signPole {
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(57, 255, 20, 0.2) 0%,
+    rgba(57, 255, 20, 0.05) 100%
+  );
+  margin-left: 0;
+}
+
 /* Idle animations */
 .bounce .sprite {
   animation: bob 2s ease-in-out infinite;
@@ -133,32 +204,8 @@
   animation: bob 1.5s ease-in-out infinite;
 }
 
-/* Talking state */
 .talking .sprite {
   animation: bob 0.5s ease-in-out infinite;
-}
-
-/* Name plate */
-.nameplate {
-  text-align: center;
-  margin-top: 8px;
-  white-space: nowrap;
-}
-
-.name {
-  font-family: var(--font-display);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px currentColor;
-}
-
-.title {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--pip-text-dim);
-  letter-spacing: 1px;
-  margin-top: 2px;
 }
 
 /* Interaction hint */
@@ -173,7 +220,7 @@
   letter-spacing: 2px;
   text-shadow: 0 0 10px var(--pip-green-glow);
   animation: interactionPulse 1.5s ease-in-out infinite;
-  background: rgba(10, 14, 10, 0.8);
+  background: rgba(7, 10, 6, 0.9);
   padding: 2px 8px;
   border: 1px solid var(--pip-border);
   border-radius: 4px;

@@ -19,7 +19,6 @@ export function Scene() {
       const xPct = ((e.clientX - rect.left) / rect.width) * 100;
       const yPct = ((e.clientY - rect.top) / rect.height) * 100;
 
-      // Clamp to playable area (below sign, above bottom bar)
       const clampedY = Math.max(22, Math.min(yPct, 92));
 
       useGameStore.getState().setCharacterTarget({ x: xPct, y: clampedY });
@@ -31,7 +30,9 @@ export function Scene() {
     <div className={styles.viewport} onClick={handleSceneClick}>
       {/* Background layers */}
       <div className={styles.gridOverlay} />
-      <div className={styles.floorGlow} />
+      <div className={styles.noiseOverlay} />
+      <div className={styles.smokeLayer} />
+      <div className={styles.vignetteOverlay} />
 
       {/* Hollywood Sign */}
       <HollywoodSign />
@@ -39,7 +40,7 @@ export function Scene() {
       {/* Instructions */}
       <InstructionsBox />
 
-      {/* Scenery items */}
+      {/* Scenery items (CSS-only) */}
       {sceneryItems.map((item) => (
         <div
           key={item.id}
@@ -47,12 +48,9 @@ export function Scene() {
           style={{
             left: `${item.x}%`,
             top: `${item.y}%`,
-            opacity: item.opacity ?? 0.6,
+            transform: `translate(-50%, -50%) rotate(${item.rotation ?? 0}deg) scale(${item.scale ?? 1})`,
           }}
-          title={item.label}
-        >
-          {item.visual}
-        </div>
+        />
       ))}
 
       {/* NPCs */}

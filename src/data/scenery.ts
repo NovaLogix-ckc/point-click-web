@@ -1,56 +1,56 @@
 export interface SceneryItem {
   id: string;
-  type: 'desk' | 'server' | 'plant' | 'sign' | 'terminal' | 'decoration' | 'rug' | 'poster';
-  x: number; // percentage
-  y: number; // percentage
-  visual: string; // emoji or text content
-  label: string;
-  opacity?: number;
+  type: 'pipe' | 'grate' | 'stain' | 'wire' | 'crack' | 'vent' | 'puddle' | 'marking';
+  x: number;
+  y: number;
+  rotation?: number;
+  scale?: number;
 }
 
 export const sceneryItems: SceneryItem[] = [
-  // Server racks
-  { id: 's1', type: 'server', x: 8, y: 30, visual: '🖥️', label: 'Hallucination Server Rack A', opacity: 0.5 },
-  { id: 's2', type: 'server', x: 10, y: 33, visual: '🖥️', label: 'Hallucination Server Rack B', opacity: 0.45 },
-  { id: 's3', type: 'server', x: 92, y: 45, visual: '🖥️', label: 'Confabulation Cluster Node', opacity: 0.5 },
+  // Pipes running across the scene
+  { id: 'pipe1', type: 'pipe', x: 5, y: 45, rotation: 90, scale: 1.5 },
+  { id: 'pipe2', type: 'pipe', x: 95, y: 30, rotation: 90, scale: 2 },
+  { id: 'pipe3', type: 'pipe', x: 40, y: 88, rotation: 0, scale: 1.8 },
+  { id: 'pipe4', type: 'pipe', x: 62, y: 20, rotation: 15, scale: 1.2 },
 
-  // Desks
-  { id: 'd1', type: 'desk', x: 25, y: 50, visual: '🗄️', label: 'Filing Cabinet (contains imaginary patents)', opacity: 0.5 },
-  { id: 'd2', type: 'desk', x: 72, y: 35, visual: '🪑', label: 'Ergonomic Chair (AI-designed, not comfortable)', opacity: 0.4 },
-  { id: 'd3', type: 'desk', x: 55, y: 85, visual: '📋', label: 'Clipboard (TruthBender test results)', opacity: 0.45 },
-  { id: 'd4', type: 'desk', x: 38, y: 28, visual: '💼', label: 'Briefcase (full of hallucinated contracts)', opacity: 0.4 },
+  // Floor grates
+  { id: 'grate1', type: 'grate', x: 15, y: 60 },
+  { id: 'grate2', type: 'grate', x: 55, y: 75 },
+  { id: 'grate3', type: 'grate', x: 82, y: 48 },
+  { id: 'grate4', type: 'grate', x: 30, y: 85 },
 
-  // Plants
-  { id: 'p1', type: 'plant', x: 18, y: 72, visual: '🌿', label: 'Office Plant (the only real thing here)', opacity: 0.5 },
-  { id: 'p2', type: 'plant', x: 85, y: 25, visual: '🪴', label: 'Potted Fern (AI thinks it\'s a cactus)', opacity: 0.45 },
-  { id: 'p3', type: 'plant', x: 48, y: 22, visual: '🌵', label: 'Actual Cactus (AI thinks it\'s a fern)', opacity: 0.4 },
+  // Toxic stains / corrosion
+  { id: 'stain1', type: 'stain', x: 25, y: 55, scale: 1.5 },
+  { id: 'stain2', type: 'stain', x: 60, y: 40, scale: 0.8 },
+  { id: 'stain3', type: 'stain', x: 45, y: 68 },
+  { id: 'stain4', type: 'stain', x: 85, y: 80, scale: 1.2 },
+  { id: 'stain5', type: 'stain', x: 10, y: 78, scale: 0.7 },
 
-  // Terminals
-  { id: 't1', type: 'terminal', x: 65, y: 60, visual: '💻', label: 'Dev Terminal (running DreamWeaver SDK)', opacity: 0.5 },
-  { id: 't2', type: 'terminal', x: 15, y: 55, visual: '🖲️', label: 'Mystery Input Device', opacity: 0.4 },
-  { id: 't3', type: 'terminal', x: 82, y: 75, visual: '📡', label: 'Satellite Dish (broadcasts hallucinations)', opacity: 0.45 },
+  // Dangling wires
+  { id: 'wire1', type: 'wire', x: 22, y: 22 },
+  { id: 'wire2', type: 'wire', x: 68, y: 18 },
+  { id: 'wire3', type: 'wire', x: 90, y: 25 },
+  { id: 'wire4', type: 'wire', x: 42, y: 16 },
 
-  // Signs
-  { id: 'sg1', type: 'sign', x: 30, y: 18, visual: '⚠ HALLUCINATION ZONE', label: 'Warning Sign' },
-  { id: 'sg2', type: 'sign', x: 75, y: 20, visual: 'EXIT → (does not exist)', label: 'Fake Exit Sign' },
-  { id: 'sg3', type: 'sign', x: 50, y: 92, visual: '☢ TRUTH-FREE AREA', label: 'Safety Sign' },
-  { id: 'sg4', type: 'sign', x: 12, y: 88, visual: 'FLOOR B-7 // SECTOR G', label: 'Floor Marker' },
+  // Wall cracks
+  { id: 'crack1', type: 'crack', x: 35, y: 30, rotation: -20 },
+  { id: 'crack2', type: 'crack', x: 75, y: 55, rotation: 30 },
+  { id: 'crack3', type: 'crack', x: 12, y: 42, rotation: -10 },
+  { id: 'crack4', type: 'crack', x: 92, y: 65, rotation: 45 },
 
-  // Decorations
-  { id: 'dc1', type: 'decoration', x: 42, y: 40, visual: '☕', label: 'Coffee Mug (the coffee is a simulation)', opacity: 0.45 },
-  { id: 'dc2', type: 'decoration', x: 88, y: 60, visual: '🏆', label: 'Award: "Most Creative Data" 2024', opacity: 0.5 },
-  { id: 'dc3', type: 'decoration', x: 5, y: 50, visual: '🔮', label: 'Crystal Ball (less accurate than Deja-Vu Analytics)', opacity: 0.4 },
-  { id: 'dc4', type: 'decoration', x: 60, y: 25, visual: '📊', label: 'Chart (numbers are aspirational)', opacity: 0.4 },
-  { id: 'dc5', type: 'decoration', x: 33, y: 75, visual: '🧪', label: 'Beaker (hallucination concentrate)', opacity: 0.45 },
+  // Vents with eerie glow
+  { id: 'vent1', type: 'vent', x: 8, y: 35 },
+  { id: 'vent2', type: 'vent', x: 48, y: 30 },
+  { id: 'vent3', type: 'vent', x: 83, y: 28 },
 
-  // Rugs / floor markings
-  { id: 'r1', type: 'rug', x: 50, y: 55, visual: '⬡', label: 'HalluciNova Logo Floor Tile', opacity: 0.15 },
-  { id: 'r2', type: 'rug', x: 25, y: 40, visual: '◈', label: 'Decorative Floor Marker', opacity: 0.1 },
-  { id: 'r3', type: 'rug', x: 75, y: 65, visual: '◇', label: 'Conference Zone Marker', opacity: 0.12 },
+  // Puddles
+  { id: 'puddle1', type: 'puddle', x: 30, y: 62, scale: 1.3 },
+  { id: 'puddle2', type: 'puddle', x: 65, y: 82, scale: 0.9 },
+  { id: 'puddle3', type: 'puddle', x: 18, y: 48 },
 
-  // Posters
-  { id: 'ps1', type: 'poster', x: 4, y: 20, visual: '"Confidence Over Correctness" — HalluciNova Values', label: 'Corporate Poster' },
-  { id: 'ps2', type: 'poster', x: 95, y: 30, visual: '"Ship it. Facts are a v2 feature."', label: 'Motivational Poster' },
-  { id: 'ps3', type: 'poster', x: 58, y: 15, visual: '"Employee of the Month: DAVE (AI)"', label: 'Employee Recognition' },
-  { id: 'ps4', type: 'poster', x: 20, y: 90, visual: '"If the vibes are right, the facts don\'t matter"', label: 'Company Motto' },
+  // Floor markings / hazard stripes
+  { id: 'mark1', type: 'marking', x: 50, y: 58 },
+  { id: 'mark2', type: 'marking', x: 20, y: 78 },
+  { id: 'mark3', type: 'marking', x: 75, y: 90 },
 ];
