@@ -2,7 +2,7 @@ export interface NPCDefinition {
   id: string;
   name: string;
   title: string;
-  position: { x: number; y: number };
+  position: { x: number; y: number }; // percentage-based (0-100)
   interactionRadius: number;
   spriteConfig: {
     bodyColor: string;
@@ -17,8 +17,8 @@ export const npcs: NPCDefinition[] = [
     id: 'vera',
     name: 'VERA',
     title: 'Chief Visionary Officer',
-    position: { x: 500, y: 450 },
-    interactionRadius: 90,
+    position: { x: 20, y: 35 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#39ff14',
       accentColor: '#00ff88',
@@ -30,8 +30,8 @@ export const npcs: NPCDefinition[] = [
     id: 'glitch',
     name: 'GLITCH',
     title: 'Lead Product Evangelist',
-    position: { x: 1000, y: 450 },
-    interactionRadius: 90,
+    position: { x: 50, y: 45 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#00ccff',
       accentColor: '#ffffff',
@@ -43,8 +43,8 @@ export const npcs: NPCDefinition[] = [
     id: 'four04',
     name: '404',
     title: 'Senior Support Hallucinator',
-    position: { x: 1500, y: 450 },
-    interactionRadius: 90,
+    position: { x: 78, y: 38 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ff6600',
       accentColor: '#ffaa00',
@@ -56,8 +56,8 @@ export const npcs: NPCDefinition[] = [
     id: 'sarge',
     name: 'SARGE',
     title: 'Head of Talent Acquisition',
-    position: { x: 2000, y: 450 },
-    interactionRadius: 90,
+    position: { x: 35, y: 70 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ff4444',
       accentColor: '#44ff44',
@@ -69,8 +69,8 @@ export const npcs: NPCDefinition[] = [
     id: 'patches',
     name: 'PATCHES',
     title: 'Customer Success Fabricator',
-    position: { x: 2500, y: 450 },
-    interactionRadius: 90,
+    position: { x: 70, y: 72 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#aa66ff',
       accentColor: '#ffcc00',
@@ -82,8 +82,8 @@ export const npcs: NPCDefinition[] = [
     id: 'doc',
     name: 'DOC',
     title: 'Chief Documentation Hallucinator',
-    position: { x: 3000, y: 450 },
-    interactionRadius: 90,
+    position: { x: 88, y: 55 },
+    interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ffcc00',
       accentColor: '#ff66aa',

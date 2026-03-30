@@ -1,9 +1,6 @@
 .npc {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: -20px;
-  margin-top: -70px;
+  transform: translate(-50%, -100%);
   cursor: pointer;
   z-index: 15;
   transition: filter 0.2s;

@@ -10,7 +10,9 @@ export function Character() {
     <div
       className={`${styles.character} ${isWalking ? styles.walking : ''}`}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px) scaleX(${facingDirection === 'left' ? -1 : 1})`,
+        left: `${position.x}%`,
+        top: `${position.y}%`,
+        transform: `translate(-50%, -100%) scaleX(${facingDirection === 'left' ? -1 : 1})`,
       }}
     >
       {/* Head */}

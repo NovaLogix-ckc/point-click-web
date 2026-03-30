@@ -24,7 +24,8 @@ export function NPC({ npc }: NPCProps) {
     <div
       className={`${styles.npc} ${styles[npc.idleAnimation]} ${isTalking ? styles.talking : ''}`}
       style={{
-        transform: `translate(${npc.position.x}px, ${npc.position.y}px)`,
+        left: `${npc.position.x}%`,
+        top: `${npc.position.y}%`,
       }}
       onClick={handleClick}
     >

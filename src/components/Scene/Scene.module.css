@@ -1,112 +1,121 @@
 .viewport {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   position: relative;
   cursor: crosshair;
+  overflow: hidden;
+  background: var(--pip-bg);
 }
 
-.scene {
-  height: 100%;
-  position: relative;
-  transition: transform 0.15s ease-out;
-}
-
-.skyGrid {
+/* Subtle grid background */
+.gridOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background:
-    linear-gradient(
-      180deg,
-      rgba(57, 255, 20, 0.02) 0%,
-      transparent 40%,
-      transparent 70%,
-      rgba(57, 255, 20, 0.04) 100%
-    ),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 99px,
-      rgba(57, 255, 20, 0.03) 99px,
-      rgba(57, 255, 20, 0.03) 100px
+      transparent 59px,
+      rgba(57, 255, 20, 0.025) 59px,
+      rgba(57, 255, 20, 0.025) 60px
     ),
     repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 99px,
-      rgba(57, 255, 20, 0.03) 99px,
-      rgba(57, 255, 20, 0.03) 100px
+      transparent 59px,
+      rgba(57, 255, 20, 0.025) 59px,
+      rgba(57, 255, 20, 0.025) 60px
     );
-}
-
-.buildings {
-  position: absolute;
-  bottom: 180px;
-  left: 0;
-  right: 0;
-  height: 200px;
-  background:
-    /* Building 1 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
-      no-repeat 200px bottom / 80px 120px,
-    /* Building 2 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
-      no-repeat 400px bottom / 60px 160px,
-    /* Building 3 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
-      no-repeat 700px bottom / 100px 100px,
-    /* Building 4 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
-      no-repeat 1100px bottom / 70px 140px,
-    /* Building 5 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
-      no-repeat 1400px bottom / 90px 110px,
-    /* Building 6 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
-      no-repeat 1800px bottom / 80px 150px,
-    /* Building 7 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.06) 0%, transparent 100%)
-      no-repeat 2100px bottom / 60px 130px,
-    /* Building 8 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
-      no-repeat 2500px bottom / 100px 90px,
-    /* Building 9 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%)
-      no-repeat 2900px bottom / 70px 170px,
-    /* Building 10 */
-    linear-gradient(0deg, rgba(57, 255, 20, 0.04) 0%, transparent 100%)
-      no-repeat 3200px bottom / 90px 120px;
   pointer-events: none;
+  z-index: 0;
 }
 
-.ground {
+/* Ambient floor glow at the bottom */
+.floorGlow {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 180px;
-  background: linear-gradient(
-    180deg,
-    rgba(57, 255, 20, 0.06) 0%,
-    rgba(57, 255, 20, 0.02) 100%
+  height: 40%;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 100%,
+    rgba(57, 255, 20, 0.04) 0%,
+    transparent 70%
   );
+  pointer-events: none;
+  z-index: 0;
 }
 
-.groundLine {
+/* Scenery items */
+.sceneryItem {
   position: absolute;
-  bottom: 178px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--pip-border) 10%,
-    var(--pip-border) 90%,
-    transparent 100%
-  );
-  box-shadow: 0 0 10px var(--pip-green-glow);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--pip-green-dim);
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Type-specific styles */
+.desk {
+  font-size: 28px;
+  filter: drop-shadow(0 0 6px rgba(57, 255, 20, 0.2));
+}
+
+.server {
+  font-size: 24px;
+  animation: glowPulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.3));
+}
+
+.plant {
+  font-size: 22px;
+  filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.15));
+}
+
+.sign {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--pip-text-dim);
+  text-shadow: 0 0 6px var(--pip-green-glow);
+  border: 1px solid var(--pip-border);
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(10, 14, 10, 0.7);
+}
+
+.terminal {
+  font-size: 20px;
+  animation: flicker 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.25));
+}
+
+.decoration {
+  font-size: 18px;
+  filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.15));
+}
+
+.rug {
+  font-size: 32px;
+  opacity: 0.3 !important;
+  filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.1));
+}
+
+.poster {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--pip-amber);
+  text-shadow: 0 0 6px var(--pip-amber-glow);
+  border: 1px solid rgba(255, 191, 0, 0.2);
+  padding: 4px 8px;
+  border-radius: 2px;
+  background: rgba(10, 14, 10, 0.8);
+  max-width: 120px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
 }
