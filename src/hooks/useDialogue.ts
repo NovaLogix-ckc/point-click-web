@@ -28,14 +28,7 @@ export function useDialogue() {
         const tree = dialogueTrees[store.activeNPCId];
         const node = tree?.nodes[currentNodeId];
         if (node && node.options[optionIndex]) {
-          const nextNodeId = node.options[optionIndex].nextNodeId;
-          const nextNode = tree.nodes[nextNodeId];
-          if (nextNode?.isTerminal) {
-            store.advanceDialogue(nextNodeId);
-            setTimeout(() => store.endDialogue(), 2000);
-          } else {
-            store.advanceDialogue(nextNodeId);
-          }
+          store.advanceDialogue(node.options[optionIndex].nextNodeId);
         }
       }
     };

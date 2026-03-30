@@ -29,57 +29,54 @@ export function NPC({ npc }: NPCProps) {
       }}
       onClick={handleClick}
     >
-      {/* Signpost */}
-      <div className={styles.signpost}>
-        <div className={styles.signBoard}>
-          <div className={styles.signName}>{npc.name}</div>
-          <div className={styles.signTitle}>{npc.title}</div>
-        </div>
-        <div className={styles.signPole} />
-      </div>
-
       {/* Interaction indicator */}
       {isNearby && !isTalking && (
         <div className={styles.interactHint}>TALK</div>
       )}
 
-      {/* NPC Sprite */}
-      <div className={styles.sprite}>
-        <div
-          className={styles.head}
-          style={{ background: npc.spriteConfig.accentColor }}
-        />
+      <div className={styles.layout}>
+        {/* Robot Sprite */}
+        <div className={styles.sprite}>
+          {/* Antenna */}
+          <div className={styles.antenna}>
+            <div className={styles.antennaTip} />
+          </div>
+          {/* Head - angular robot */}
+          <div className={styles.head} style={{ borderColor: `${npc.spriteConfig.bodyColor}60` }}>
+            {/* Evil eyes */}
+            <div className={styles.eyes}>
+              <div className={styles.eye} style={{ background: npc.spriteConfig.bodyColor, boxShadow: `0 0 6px ${npc.spriteConfig.bodyColor}` }} />
+              <div className={styles.eye} style={{ background: npc.spriteConfig.bodyColor, boxShadow: `0 0 6px ${npc.spriteConfig.bodyColor}` }} />
+            </div>
+            {/* Mouth slit */}
+            <div className={styles.mouth} />
+          </div>
+          {/* Neck */}
+          <div className={styles.neck} />
+          {/* Body - boxy chassis */}
+          <div className={styles.body} style={{ borderColor: `${npc.spriteConfig.bodyColor}40` }}>
+            <div className={styles.chestLight} style={{ background: npc.spriteConfig.bodyColor, boxShadow: `0 0 8px ${npc.spriteConfig.bodyColor}60` }} />
+            <div className={styles.chestVents} />
+          </div>
+          {/* Arms */}
+          <div className={styles.arms}>
+            <div className={styles.arm} style={{ borderColor: `${npc.spriteConfig.bodyColor}30` }} />
+            <div className={styles.arm} style={{ borderColor: `${npc.spriteConfig.bodyColor}30` }} />
+          </div>
+          {/* Legs - mechanical */}
+          <div className={styles.legs}>
+            <div className={styles.leg} style={{ borderColor: `${npc.spriteConfig.bodyColor}30` }} />
+            <div className={styles.leg} style={{ borderColor: `${npc.spriteConfig.bodyColor}30` }} />
+          </div>
+        </div>
 
-        {npc.spriteConfig.accessory === 'glasses' && (
-          <div className={styles.glasses} style={{ borderColor: npc.spriteConfig.bodyColor }} />
-        )}
-        {npc.spriteConfig.accessory === 'labcoat' && (
-          <div className={styles.labcoat} style={{ background: npc.spriteConfig.accentColor }} />
-        )}
-        {npc.spriteConfig.accessory === 'headset' && (
-          <div className={styles.headset} style={{ background: npc.spriteConfig.bodyColor }} />
-        )}
-        {npc.spriteConfig.accessory === 'hat' && (
-          <div className={styles.hat} style={{ background: npc.spriteConfig.bodyColor }} />
-        )}
-        {npc.spriteConfig.accessory === 'trenchcoat' && (
-          <div className={styles.trenchcoat} style={{ background: npc.spriteConfig.bodyColor }} />
-        )}
-        {npc.spriteConfig.accessory === 'book' && (
-          <div className={styles.book} style={{ background: npc.spriteConfig.accentColor }} />
-        )}
-
-        <div
-          className={styles.body}
-          style={{
-            background: npc.spriteConfig.bodyColor,
-            boxShadow: `0 0 8px ${npc.spriteConfig.bodyColor}30`,
-          }}
-        />
-
-        <div className={styles.legs}>
-          <div className={styles.leg} style={{ background: npc.spriteConfig.bodyColor }} />
-          <div className={styles.leg} style={{ background: npc.spriteConfig.bodyColor }} />
+        {/* Signpost to the right */}
+        <div className={styles.signpost}>
+          <div className={styles.signPole} />
+          <div className={styles.signBoard}>
+            <div className={styles.signName}>{npc.name}</div>
+            <div className={styles.signTitle}>{npc.title}</div>
+          </div>
         </div>
       </div>
     </div>
