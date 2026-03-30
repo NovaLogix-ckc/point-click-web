@@ -45,13 +45,7 @@ export function DialogueBox() {
 
   const handleOptionSelect = (nextNodeId: string) => {
     if (isTyping) return;
-    const nextNode = tree?.nodes[nextNodeId];
-    if (nextNode?.isTerminal) {
-      setDisplayedText(nextNode.text);
-      setTimeout(() => endDialogue(), 2000);
-    } else {
-      advanceDialogue(nextNodeId);
-    }
+    advanceDialogue(nextNodeId);
   };
 
   const skipTyping = () => {
