@@ -3,6 +3,7 @@ export interface NPCDefinition {
   name: string;
   title: string;
   position: { x: number; y: number };
+  mobilePosition: { x: number; y: number };
   interactionRadius: number;
   spriteConfig: {
     bodyColor: string;
@@ -18,6 +19,7 @@ export const npcs: NPCDefinition[] = [
     name: 'VERA',
     title: 'Chief Visionary Officer',
     position: { x: 20, y: 35 },
+    mobilePosition: { x: 22, y: 28 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#00f0ff',
@@ -31,6 +33,7 @@ export const npcs: NPCDefinition[] = [
     name: 'GLITCH',
     title: 'Lead Product Evangelist',
     position: { x: 50, y: 45 },
+    mobilePosition: { x: 60, y: 28 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ff2d7b',
@@ -44,6 +47,7 @@ export const npcs: NPCDefinition[] = [
     name: '404',
     title: 'Senior Support Hallucinator',
     position: { x: 78, y: 38 },
+    mobilePosition: { x: 22, y: 47 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ffe156',
@@ -57,6 +61,7 @@ export const npcs: NPCDefinition[] = [
     name: 'SARGE',
     title: 'Head of Talent Acquisition',
     position: { x: 35, y: 70 },
+    mobilePosition: { x: 60, y: 47 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#ff4444',
@@ -70,6 +75,7 @@ export const npcs: NPCDefinition[] = [
     name: 'PATCHES',
     title: 'Customer Success Fabricator',
     position: { x: 70, y: 72 },
+    mobilePosition: { x: 22, y: 66 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#b44dff',
@@ -83,6 +89,7 @@ export const npcs: NPCDefinition[] = [
     name: 'DOC',
     title: 'Chief Documentation Hallucinator',
     position: { x: 88, y: 55 },
+    mobilePosition: { x: 60, y: 66 },
     interactionRadius: 8,
     spriteConfig: {
       bodyColor: '#00ff88',

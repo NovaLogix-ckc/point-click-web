@@ -294,12 +294,22 @@
     transform-origin: bottom center;
   }
 
+  .signBoard {
+    max-width: 100px;
+    padding: 4px 6px;
+  }
+
   .signName {
-    font-size: 11px;
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 
   .signTitle {
-    font-size: 8px;
+    font-size: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 88px;
   }
 
   .interactHint {

@@ -1,4 +1,5 @@
 import { useGameStore } from '../../store/gameStore';
+import { useIsMobile } from '../../hooks/useIsMobile';
 import type { NPCDefinition } from '../../data/npcs';
 import styles from './NPC.module.css';
 
@@ -10,8 +11,10 @@ export function NPC({ npc }: NPCProps) {
   const nearbyNPCId = useGameStore((s) => s.nearbyNPCId);
   const startDialogue = useGameStore((s) => s.startDialogue);
   const activeNPCId = useGameStore((s) => s.activeNPCId);
+  const isMobile = useIsMobile();
   const isNearby = nearbyNPCId === npc.id;
   const isTalking = activeNPCId === npc.id;
+  const pos = isMobile ? npc.mobilePosition : npc.position;
 
   const handleClick = (e: React.MouseEvent) => {
     if (isNearby) {
@@ -24,8 +27,8 @@ export function NPC({ npc }: NPCProps) {
     <div
       className={`${styles.npc} ${styles[npc.idleAnimation]} ${isTalking ? styles.talking : ''}`}
       style={{
-        left: `${npc.position.x}%`,
-        top: `${npc.position.y}%`,
+        left: `${pos.x}%`,
+        top: `${pos.y}%`,
       }}
       onClick={handleClick}
     >

@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useGameStore } from '../store/gameStore';
+import { useIsMobile } from './useIsMobile';
 import { npcs } from '../data/npcs';
 
 export function useNPCProximity() {
   const characterPosition = useGameStore((s) => s.characterPosition);
   const setNearbyNPCId = useGameStore((s) => s.setNearbyNPCId);
   const activeNPCId = useGameStore((s) => s.activeNPCId);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (activeNPCId) return;
@@ -14,8 +16,9 @@ export function useNPCProximity() {
     let closestDist = Infinity;
 
     for (const npc of npcs) {
-      const dx = characterPosition.x - npc.position.x;
-      const dy = characterPosition.y - npc.position.y;
+      const pos = isMobile ? npc.mobilePosition : npc.position;
+      const dx = characterPosition.x - pos.x;
+      const dy = characterPosition.y - pos.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < npc.interactionRadius && dist < closestDist) {
@@ -25,5 +28,5 @@ export function useNPCProximity() {
     }
 
     setNearbyNPCId(closest);
-  }, [characterPosition.x, characterPosition.y, activeNPCId, setNearbyNPCId]);
+  }, [characterPosition.x, characterPosition.y, activeNPCId, setNearbyNPCId, isMobile]);
 }
