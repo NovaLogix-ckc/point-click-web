@@ -278,3 +278,29 @@
   border-radius: 4px;
   z-index: 10;
 }
+
+@media (max-width: 768px) {
+  .npc {
+    padding: 10px;
+    margin: -10px;
+  }
+
+  .sprite {
+    transform: scale(1.15);
+    transform-origin: bottom center;
+  }
+
+  .signName {
+    font-size: 11px;
+  }
+
+  .signTitle {
+    font-size: 8px;
+  }
+
+  .interactHint {
+    font-size: 12px;
+    padding: 4px 10px;
+    top: -28px;
+  }
+}

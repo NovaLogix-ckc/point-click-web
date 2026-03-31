@@ -96,3 +96,50 @@
   padding: 8px;
   letter-spacing: 2px;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+
+  .box {
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .header {
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+
+  .speaker {
+    font-size: 12px;
+  }
+
+  .sectionTag {
+    font-size: 8px;
+    display: none;
+  }
+
+  .closeBtn {
+    font-size: 12px;
+    padding: 8px 12px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textArea {
+    min-height: 40px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .options {
+    gap: 6px;
+  }
+}

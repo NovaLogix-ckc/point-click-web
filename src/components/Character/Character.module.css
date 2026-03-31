@@ -80,3 +80,36 @@
   text-shadow: 0 0 6px var(--pip-green-glow);
   letter-spacing: 1px;
 }
+
+@media (max-width: 768px) {
+  .character {
+    width: 38px;
+    transform-origin: bottom center;
+  }
+
+  .head {
+    width: 24px;
+    height: 24px;
+  }
+
+  .visor {
+    width: 16px;
+    height: 7px;
+    top: 8px;
+    left: 4px;
+  }
+
+  .body {
+    width: 28px;
+    height: 26px;
+  }
+
+  .leg {
+    width: 7px;
+    height: 16px;
+  }
+
+  .label {
+    font-size: 10px;
+  }
+}
