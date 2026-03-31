@@ -5,12 +5,13 @@
   z-index: 50;
   width: min(320px, calc(100vw - 32px));
   padding: 14px 16px;
-  background: rgba(7, 10, 6, 0.94);
-  border: 1px solid rgba(57, 255, 20, 0.12);
-  border-left: 2px solid rgba(57, 255, 20, 0.3);
+  background: rgba(6, 8, 13, 0.94);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-left: 2px solid rgba(255, 45, 123, 0.5);
   border-radius: 4px;
   box-shadow:
-    0 0 15px rgba(57, 255, 20, 0.06),
+    0 0 20px rgba(0, 240, 255, 0.08),
+    0 0 40px rgba(255, 45, 123, 0.04),
     inset 0 0 20px rgba(0, 0, 0, 0.3);
   font-family: var(--font-mono);
   pointer-events: auto;
@@ -35,12 +36,14 @@
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--pip-green);
-  text-shadow: 0 0 10px var(--pip-green-glow);
+  text-shadow:
+    0 0 10px var(--pip-green-glow),
+    0 0 25px rgba(0, 240, 255, 0.2);
 }
 
 .close {
   background: none;
-  border: 1px solid rgba(57, 255, 20, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.2);
   color: var(--pip-text-dim);
   font-family: var(--font-mono);
   font-size: 10px;
@@ -53,15 +56,15 @@
 }
 
 .close:hover {
-  color: var(--pip-green);
-  border-color: var(--pip-green);
-  box-shadow: 0 0 8px var(--pip-green-glow);
+  color: var(--cyber-pink);
+  border-color: var(--cyber-pink);
+  box-shadow: 0 0 10px rgba(255, 45, 123, 0.3);
 }
 
 .slogan {
   font-size: 13px;
-  color: var(--pip-amber);
-  text-shadow: 0 0 8px var(--pip-amber-glow);
+  color: var(--cyber-pink);
+  text-shadow: 0 0 10px var(--cyber-pink-glow);
   line-height: 1.4;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
@@ -70,13 +73,13 @@
 .slogan em {
   font-style: italic;
   text-decoration: underline;
-  text-decoration-color: rgba(255, 191, 0, 0.4);
+  text-decoration-color: rgba(255, 45, 123, 0.4);
   text-underline-offset: 2px;
 }
 
 .divider {
   height: 1px;
-  background: linear-gradient(90deg, var(--pip-border), transparent);
+  background: linear-gradient(90deg, rgba(0, 240, 255, 0.3), rgba(255, 45, 123, 0.2), transparent);
   margin-bottom: 10px;
 }
 
@@ -101,14 +104,15 @@
   content: '>';
   position: absolute;
   left: 0;
-  color: var(--pip-green-dim);
+  color: var(--cyber-pink);
+  text-shadow: 0 0 4px rgba(255, 45, 123, 0.3);
 }
 
 .key {
   color: var(--pip-green);
   font-weight: bold;
   letter-spacing: 1px;
-  text-shadow: 0 0 4px var(--pip-green-glow);
+  text-shadow: 0 0 6px var(--pip-green-glow);
 }
 
 .footer {
@@ -117,7 +121,7 @@
   letter-spacing: 0.5px;
   line-height: 1.4;
   opacity: 0.7;
-  border-top: 1px solid var(--pip-border);
+  border-top: 1px solid rgba(180, 77, 255, 0.15);
   padding-top: 8px;
 }
 

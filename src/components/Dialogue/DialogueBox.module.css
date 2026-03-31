@@ -12,13 +12,15 @@
   pointer-events: all;
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(10, 14, 10, 0.95);
-  border: 1px solid var(--pip-border);
+  background: rgba(6, 8, 13, 0.95);
+  border: 1px solid rgba(0, 240, 255, 0.25);
   border-radius: 8px;
   padding: 16px;
   box-shadow:
-    0 0 20px var(--pip-green-glow),
-    inset 0 0 30px rgba(57, 255, 20, 0.02);
+    0 0 25px rgba(0, 240, 255, 0.15),
+    0 0 50px rgba(0, 240, 255, 0.05),
+    0 0 4px rgba(255, 45, 123, 0.1),
+    inset 0 0 30px rgba(0, 240, 255, 0.03);
 }
 
 .header {
@@ -27,7 +29,8 @@
   gap: 12px;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--pip-border);
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, rgba(0, 240, 255, 0.3), rgba(180, 77, 255, 0.2), rgba(255, 45, 123, 0.2)) 1;
 }
 
 .speaker {
@@ -35,7 +38,9 @@
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;
-  text-shadow: 0 0 8px currentColor;
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 25px currentColor;
 }
 
 .sectionTag {
@@ -48,8 +53,8 @@
 
 .closeBtn {
   background: none;
-  border: 1px solid rgba(255, 68, 68, 0.3);
-  color: #ff4444;
+  border: 1px solid rgba(255, 45, 123, 0.4);
+  color: var(--cyber-pink);
   font-family: var(--font-mono);
   font-size: 11px;
   padding: 4px 10px;
@@ -60,9 +65,10 @@
 }
 
 .closeBtn:hover {
-  background: rgba(255, 68, 68, 0.1);
-  border-color: #ff4444;
-  box-shadow: 0 0 8px rgba(255, 68, 68, 0.3);
+  background: rgba(255, 45, 123, 0.12);
+  border-color: var(--cyber-pink);
+  box-shadow: 0 0 12px rgba(255, 45, 123, 0.4);
+  text-shadow: 0 0 6px rgba(255, 45, 123, 0.5);
 }
 
 .textArea {
@@ -75,11 +81,13 @@
 
 .text {
   color: var(--pip-text);
+  text-shadow: 0 0 4px rgba(0, 240, 255, 0.15);
 }
 
 .cursor {
   color: var(--pip-green);
   animation: blink 0.8s step-end infinite;
+  text-shadow: 0 0 6px var(--pip-green-glow);
 }
 
 .options {
@@ -105,6 +113,10 @@
   .box {
     padding: 10px;
     border-radius: 6px;
+    box-shadow:
+      0 0 15px rgba(0, 240, 255, 0.1),
+      0 0 3px rgba(255, 45, 123, 0.08),
+      inset 0 0 15px rgba(0, 240, 255, 0.02);
   }
 
   .header {

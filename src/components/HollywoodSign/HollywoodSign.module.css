@@ -11,7 +11,7 @@
 
 /* ---- Animated background effects ---- */
 
-/* Pulsing glow orb behind the sign */
+/* Pulsing glow orb behind the sign - cyan primary */
 .glowOrb {
   position: absolute;
   top: 50%;
@@ -21,14 +21,15 @@
   height: 120px;
   background: radial-gradient(
     ellipse at center,
-    rgba(57, 255, 20, 0.08) 0%,
-    rgba(57, 255, 20, 0.03) 40%,
+    rgba(0, 240, 255, 0.12) 0%,
+    rgba(0, 240, 255, 0.04) 40%,
     transparent 70%
   );
   border-radius: 50%;
   animation: glowPulse 4s ease-in-out infinite;
 }
 
+/* Secondary orb - hot pink */
 .glowOrbSecond {
   position: absolute;
   top: 50%;
@@ -38,7 +39,8 @@
   height: 180px;
   background: radial-gradient(
     ellipse at center,
-    rgba(139, 69, 19, 0.04) 0%,
+    rgba(255, 45, 123, 0.06) 0%,
+    rgba(180, 77, 255, 0.03) 40%,
     transparent 60%
   );
   border-radius: 50%;
@@ -63,18 +65,20 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(57, 255, 20, 0.6),
+    rgba(0, 240, 255, 0.7),
     transparent
   );
   border-radius: 1px;
   animation: electricArc 3s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .arc:nth-child(1) {
   left: 5%;
   transform: rotate(-15deg);
   animation-delay: 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 45, 123, 0.7), transparent);
+  box-shadow: 0 0 10px rgba(255, 45, 123, 0.5);
 }
 
 .arc:nth-child(2) {
@@ -87,9 +91,11 @@
   left: 40%;
   transform: rotate(-5deg);
   animation-delay: 3.2s;
+  background: linear-gradient(90deg, transparent, rgba(180, 77, 255, 0.7), transparent);
+  box-shadow: 0 0 10px rgba(180, 77, 255, 0.5);
 }
 
-/* Horizontal scan beam */
+/* Horizontal scan beam - pink */
 .scanBeam {
   position: absolute;
   top: 0;
@@ -99,11 +105,11 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(57, 255, 20, 0.15),
+    rgba(255, 45, 123, 0.25),
     transparent
   );
   animation: scanMove 5s ease-in-out infinite;
-  box-shadow: 0 0 6px rgba(57, 255, 20, 0.1);
+  box-shadow: 0 0 8px rgba(255, 45, 123, 0.15);
 }
 
 @keyframes scanMove {
@@ -127,19 +133,25 @@
   font-weight: 900;
   color: var(--pip-green);
   text-shadow:
-    0 0 15px var(--pip-green-glow),
-    0 0 30px var(--pip-green-glow),
-    0 0 60px rgba(57, 255, 20, 0.1),
+    0 0 15px rgba(0, 240, 255, 0.6),
+    0 0 30px rgba(0, 240, 255, 0.3),
+    0 0 60px rgba(0, 240, 255, 0.15),
+    0 0 80px rgba(180, 77, 255, 0.1),
     0 2px 0 var(--pip-green-dim);
   animation: bob 3s ease-in-out infinite;
   display: inline-block;
+}
+
+/* Some letters cycle through colors for variety */
+.letter:nth-child(2n) {
+  animation: bob 3s ease-in-out infinite, textColorCycle 12s ease-in-out infinite;
 }
 
 .flicker {
   animation: bob 3s ease-in-out infinite, heavyFlicker 5s ease-in-out infinite;
 }
 
-/* Glitch duplicate of sign */
+/* Glitch duplicate of sign - hot pink ghost */
 .signGlitch {
   position: absolute;
   top: 0;
@@ -157,8 +169,8 @@
   font-family: var(--font-display);
   font-size: 60px;
   font-weight: 900;
-  color: rgba(139, 69, 19, 0.4);
-  text-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+  color: rgba(255, 45, 123, 0.5);
+  text-shadow: 0 0 25px rgba(255, 45, 123, 0.4);
 }
 
 /* Tagline */
@@ -168,13 +180,15 @@
   font-size: 12px;
   color: var(--pip-text-dim);
   letter-spacing: 3px;
-  text-shadow: 0 0 8px var(--pip-green-glow);
+  text-shadow:
+    0 0 8px var(--pip-green-glow),
+    0 0 20px rgba(180, 77, 255, 0.15);
   position: relative;
   z-index: 2;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-/* Dripping effect */
+/* Dripping effect - cyan */
 .drips {
   position: relative;
   height: 30px;
@@ -188,16 +202,16 @@
   height: 0;
   background: linear-gradient(
     180deg,
-    rgba(57, 255, 20, 0.3),
-    rgba(57, 255, 20, 0.05)
+    rgba(0, 240, 255, 0.4),
+    rgba(180, 77, 255, 0.1)
   );
   border-radius: 0 0 2px 2px;
   animation: dripFall 4s ease-in infinite;
 }
 
 @keyframes dripFall {
-  0% { height: 0; opacity: 0.6; }
-  60% { height: 20px; opacity: 0.4; }
+  0% { height: 0; opacity: 0.7; }
+  60% { height: 20px; opacity: 0.5; }
   100% { height: 25px; opacity: 0; }
 }
 

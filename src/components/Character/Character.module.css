@@ -12,7 +12,9 @@
   background: var(--pip-green);
   border-radius: 50%;
   position: relative;
-  box-shadow: 0 0 10px var(--pip-green-glow);
+  box-shadow:
+    0 0 12px var(--pip-green-glow),
+    0 0 25px rgba(0, 240, 255, 0.2);
 }
 
 .visor {
@@ -24,6 +26,7 @@
   background: var(--pip-bg);
   border-radius: 2px;
   border: 1px solid var(--pip-green-dim);
+  box-shadow: inset 0 0 4px rgba(0, 240, 255, 0.3);
 }
 
 .body {
@@ -34,7 +37,9 @@
   border: 2px solid var(--pip-green);
   border-radius: 4px;
   position: relative;
-  box-shadow: 0 0 8px var(--pip-green-glow);
+  box-shadow:
+    0 0 10px var(--pip-green-glow),
+    0 0 20px rgba(0, 240, 255, 0.15);
 }
 
 .screen {
@@ -45,8 +50,9 @@
   bottom: 3px;
   background: var(--pip-green);
   border-radius: 2px;
-  opacity: 0.6;
+  opacity: 0.7;
   animation: glowPulse 2s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
 }
 
 .legs {
@@ -61,6 +67,7 @@
   height: 14px;
   background: var(--pip-green-dim);
   border-radius: 0 0 3px 3px;
+  box-shadow: 0 2px 4px rgba(0, 240, 255, 0.1);
 }
 
 .walking .leftLeg {
@@ -77,7 +84,7 @@
   font-size: 9px;
   color: var(--pip-green);
   margin-top: 4px;
-  text-shadow: 0 0 6px var(--pip-green-glow);
+  text-shadow: 0 0 8px var(--pip-green-glow);
   letter-spacing: 1px;
 }
 

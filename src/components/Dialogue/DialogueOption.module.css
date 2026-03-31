@@ -12,14 +12,16 @@
   line-height: 1.4;
   cursor: pointer;
   text-align: left;
-  transition: all 0.15s;
+  transition: all 0.2s ease;
   width: 100%;
 }
 
 .option:hover {
   background: var(--pip-green-subtle);
   border-color: var(--pip-green);
-  box-shadow: 0 0 12px var(--pip-green-glow);
+  box-shadow:
+    0 0 15px var(--pip-green-glow),
+    0 0 30px rgba(0, 240, 255, 0.1);
   transform: translateX(4px);
 }
 
@@ -29,39 +31,48 @@
   font-weight: 700;
   color: var(--pip-amber);
   min-width: 24px;
-  text-shadow: 0 0 6px var(--pip-amber-glow);
+  text-shadow: 0 0 8px var(--pip-amber-glow);
 }
 
 .text {
   flex: 1;
 }
 
-/* Tone variants */
+/* Tone variants - vibrant cyberpunk colors */
 .curious .key {
-  color: #00ccff;
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
 }
 
 .sarcastic .key {
-  color: #ff6644;
+  color: #ff2d7b;
+  text-shadow: 0 0 8px rgba(255, 45, 123, 0.5);
 }
 
 .enthusiastic .key {
-  color: #ffcc00;
+  color: #ffe156;
+  text-shadow: 0 0 8px rgba(255, 225, 86, 0.5);
 }
 
 .curious:hover {
-  border-color: #00ccff;
-  box-shadow: 0 0 12px rgba(0, 204, 255, 0.3);
+  border-color: #00f0ff;
+  box-shadow:
+    0 0 15px rgba(0, 240, 255, 0.4),
+    0 0 30px rgba(0, 240, 255, 0.15);
 }
 
 .sarcastic:hover {
-  border-color: #ff6644;
-  box-shadow: 0 0 12px rgba(255, 102, 68, 0.3);
+  border-color: #ff2d7b;
+  box-shadow:
+    0 0 15px rgba(255, 45, 123, 0.4),
+    0 0 30px rgba(255, 45, 123, 0.15);
 }
 
 .enthusiastic:hover {
-  border-color: #ffcc00;
-  box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+  border-color: #ffe156;
+  box-shadow:
+    0 0 15px rgba(255, 225, 86, 0.4),
+    0 0 30px rgba(255, 225, 86, 0.15);
 }
 
 @media (max-width: 768px) {

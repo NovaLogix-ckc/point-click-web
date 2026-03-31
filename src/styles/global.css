@@ -7,23 +7,40 @@
 }
 
 :root {
-  --pip-green: #39ff14;
-  --pip-green-dim: #1a7a0a;
-  --pip-green-glow: rgba(57, 255, 20, 0.3);
-  --pip-green-subtle: rgba(57, 255, 20, 0.08);
-  --pip-amber: #cc9900;
-  --pip-amber-glow: rgba(204, 153, 0, 0.25);
-  --pip-rust: #8b4513;
-  --pip-rust-glow: rgba(139, 69, 19, 0.2);
-  --pip-blood: #661a1a;
-  --pip-grime: #1a1c14;
-  --pip-bg: #070a06;
-  --pip-bg-lighter: #0e120c;
-  --pip-panel: rgba(57, 255, 20, 0.03);
-  --pip-border: rgba(57, 255, 20, 0.15);
-  --pip-text: #39ff14;
-  --pip-text-dim: rgba(57, 255, 20, 0.4);
-  --pip-smoke: rgba(20, 25, 18, 0.6);
+  /* Cyberpunk Primary: Cyan */
+  --pip-green: #00f0ff;
+  --pip-green-dim: #0088aa;
+  --pip-green-glow: rgba(0, 240, 255, 0.4);
+  --pip-green-subtle: rgba(0, 240, 255, 0.1);
+
+  /* Cyberpunk Accent: Hot Pink */
+  --cyber-pink: #ff2d7b;
+  --cyber-pink-glow: rgba(255, 45, 123, 0.4);
+  --cyber-pink-subtle: rgba(255, 45, 123, 0.08);
+
+  /* Cyberpunk Secondary: Electric Purple */
+  --cyber-purple: #b44dff;
+  --cyber-purple-glow: rgba(180, 77, 255, 0.35);
+
+  /* Highlight: Neon Yellow */
+  --pip-amber: #ffe156;
+  --pip-amber-glow: rgba(255, 225, 86, 0.35);
+
+  /* Warm accents remapped */
+  --pip-rust: #ff2d7b;
+  --pip-rust-glow: rgba(255, 45, 123, 0.25);
+  --pip-blood: #aa1155;
+
+  /* Dark backgrounds - slight blue tint for cyberpunk depth */
+  --pip-grime: #0a0c18;
+  --pip-bg: #06080d;
+  --pip-bg-lighter: #0c1018;
+  --pip-panel: rgba(0, 240, 255, 0.04);
+  --pip-border: rgba(0, 240, 255, 0.2);
+  --pip-text: #00f0ff;
+  --pip-text-dim: rgba(0, 240, 255, 0.5);
+  --pip-smoke: rgba(10, 12, 24, 0.6);
+
   --font-mono: 'Share Tech Mono', 'Courier New', monospace;
   --font-display: 'Orbitron', sans-serif;
 }
@@ -44,6 +61,6 @@ html, body {
 }
 
 ::selection {
-  background: var(--pip-green);
-  color: var(--pip-bg);
+  background: var(--cyber-pink);
+  color: #fff;
 }

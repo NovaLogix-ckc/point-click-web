@@ -87,9 +87,9 @@
 }
 
 @keyframes driftSmoke {
-  0% { transform: translateX(0) translateY(0); opacity: 0.03; }
-  50% { transform: translateX(30px) translateY(-10px); opacity: 0.06; }
-  100% { transform: translateX(0) translateY(0); opacity: 0.03; }
+  0% { transform: translateX(0) translateY(0); opacity: 0.05; }
+  50% { transform: translateX(30px) translateY(-10px); opacity: 0.1; }
+  100% { transform: translateX(0) translateY(0); opacity: 0.05; }
 }
 
 @keyframes signGlitch {
@@ -108,4 +108,58 @@
   78% { opacity: 0; }
   79% { opacity: 0.6; }
   80% { opacity: 0; }
+}
+
+/* ---- Cyberpunk-specific animations ---- */
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(0, 240, 255, 0.3),
+      0 0 30px rgba(0, 240, 255, 0.15),
+      inset 0 0 15px rgba(0, 240, 255, 0.05);
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(255, 45, 123, 0.3),
+      0 0 40px rgba(255, 45, 123, 0.15),
+      inset 0 0 20px rgba(255, 45, 123, 0.05);
+  }
+}
+
+@keyframes borderColorShift {
+  0%, 100% { border-color: rgba(0, 240, 255, 0.3); }
+  33% { border-color: rgba(180, 77, 255, 0.3); }
+  66% { border-color: rgba(255, 45, 123, 0.3); }
+}
+
+@keyframes textColorCycle {
+  0%, 100% {
+    color: #00f0ff;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 240, 255, 0.3);
+  }
+  33% {
+    color: #b44dff;
+    text-shadow: 0 0 20px rgba(180, 77, 255, 0.6), 0 0 40px rgba(180, 77, 255, 0.3);
+  }
+  66% {
+    color: #ff2d7b;
+    text-shadow: 0 0 20px rgba(255, 45, 123, 0.6), 0 0 40px rgba(255, 45, 123, 0.3);
+  }
+}
+
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.04;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.08;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cornerPulse {
+  0%, 100% { border-color: #0088aa; }
+  50% { border-color: #00f0ff; }
 }
