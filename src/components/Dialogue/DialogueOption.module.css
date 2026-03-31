@@ -63,3 +63,19 @@
   border-color: #ffcc00;
   box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+  .option {
+    padding: 12px 14px;
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .option:hover {
+    transform: none;
+  }
+
+  .key {
+    font-size: 12px;
+  }
+}

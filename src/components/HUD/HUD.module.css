@@ -81,3 +81,30 @@
   border-width: 0 3px 3px 0;
   border-radius: 0 0 16px 0;
 }
+
+@media (max-width: 768px) {
+  .hud {
+    border-radius: 8px;
+    border-width: 1px;
+  }
+
+  .topBar,
+  .bottomBar {
+    padding: 3px 10px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .content {
+    height: calc(100% - 36px);
+  }
+
+  .cornerTL,
+  .cornerTR,
+  .cornerBL,
+  .cornerBR {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+}
